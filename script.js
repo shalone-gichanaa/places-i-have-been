@@ -3,6 +3,7 @@ function Place(location, landmarks, datevisited, remarks) {
     this.landmarks = landmarks;
     this.datevisited = datevisited;
     this.remarks = remarks;
+    this.photolink = photolink;
 }
 
 Place.prototype.placeDetails = function() {
@@ -17,15 +18,16 @@ let tokyo = new Place("Tokyo", "Shibuya Crossing, Tokyo Tower", "2023-03-20", "F
 
 places.push(bali, paris, tokyo);
 
-document.getElementById("place-form").addEventListener("submit", function(event) {
+document.getElementById("placeForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
-    let location = document.getElementById("location").value;
+    let location = document.getElementById("locationInput").value;
     let landmarks = document.getElementById("landmarks").value;
-    let datevisited = document.getElementById("datevisited").value;
+    let datevisited = document.getElementById("dateVisited").value;
     let remarks = document.getElementById("remarks").value;
+    let photolink = document.getElementById("photolink").value;
     
-    let newPlace = new Place(location, landmarks, datevisited, remarks);
+    let newPlace = new Place(location, landmarks, datevisited, remarks, photolink);
     places.push(newPlace);
 
     displayPlaces();
@@ -40,18 +42,23 @@ function displayPlaces() {
         li.textContent = place.location;
 
         li.addEventListener("click", function() {
-            document.getElementById("placeDetails").innerHTML = place.placeDetails();
+            displayDetails(index);
         });
+
         placeList.appendChild(li);
     });
 
     function displayDetails(index) {
         let place = places[index];
 
-        let details = "Location: " + place.location + "<br>" +
-                      "Landmarks: " + place.landmarks + "<br>" +
-                      "Date Visited: " + place.datevisited + "<br>" +
-                      "Remarks: " + place.remarks;
+        let details =
+             `<h3>${place.location}</h3>
+             ${place.photolink ? `<img src='${place.photolink}' alt='Photo of ${place.location}' width='200'>` : ''}
+             <p>Landmarks: ${place.landmarks}</p>
+             <p>Date Visited: ${place.datevisited}</p>
+             <p>Remarks: ${place.remarks}</p>
+             <img src='${place.photolink}' alt='Photo of ${place.location}' width='200'>`;
+
         document.getElementById("placeDetails").innerHTML = details;
     }
 }
