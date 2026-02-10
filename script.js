@@ -1,4 +1,4 @@
-function Place(location, landmarks, datevisited, remarks) {
+function Place(location, landmarks, datevisited, remarks, photolink) {
     this.location = location;
     this.landmarks = landmarks;
     this.datevisited = datevisited;
@@ -47,19 +47,20 @@ function displayPlaces() {
 
         placeList.appendChild(li);
     });
+}
 
-    function displayDetails(index) {
+function displayDetails(index) {
         let place = places[index];
 
         let details =
              `<h3>${place.location}</h3>
-             ${place.photolink ? `<img src='${place.photolink}' alt='Photo of ${place.location}' width='200'>` : ''}
+             ${place.photolink ? `<img src="${place.photolink}" alt='Photo of ${place.location}' width='200'>` : ''}
              <p>Landmarks: ${place.landmarks}</p>
              <p>Date Visited: ${place.datevisited}</p>
              <p>Remarks: ${place.remarks}</p>
-             <img src='${place.photolink}' alt='Photo of ${place.location}' width='200'>`;
-
+                `;
         document.getElementById("placeDetails").innerHTML = details;
     }
-}
+    displayPlaces();
+
 
