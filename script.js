@@ -14,7 +14,6 @@ let places = [];
 let bali = new Place("Bali", "Tanah Lot, Uluwatu Temple", "2022-05-15", "Beautiful beaches and vibrant culture.");
 let paris = new Place("Paris", "Eiffel Tower, Louvre Museum", "2021-09-10", "Romantic city with rich history.");
 let tokyo = new Place("Tokyo", "Shibuya Crossing, Tokyo Tower", "2023-03-20", "Fascinating blend of tradition and modernity.");
-let paris = new Place("Paris", "Eiffel Tower, Louvre Museum", "2021-09-10", "Romantic city with rich history.");
 
 places.push(bali, paris, tokyo);
 
