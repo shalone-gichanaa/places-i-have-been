@@ -28,3 +28,6 @@ button{
     border-radius: 5px;
     cursor: pointer;
 }
+button:hover{
+    background-color: #f7a1c4;
+}
