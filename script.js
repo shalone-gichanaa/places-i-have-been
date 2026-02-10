@@ -12,9 +12,9 @@ Place.prototype.placeDetails = function() {
 
 let places = [];
 
-let bali = new Place("Bali", "Tanah Lot, Uluwatu Temple", "2022-05-15", "Beautiful beaches and vibrant culture.");
-let paris = new Place("Paris", "Eiffel Tower, Louvre Museum", "2021-09-10", "Romantic city with rich history.");
-let tokyo = new Place("Tokyo", "Shibuya Crossing, Tokyo Tower", "2023-03-20", "Fascinating blend of tradition and modernity.");
+let bali = new Place("Bali", "Tanah Lot, Uluwatu Temple", "2022-05-15", "Beautiful beaches and vibrant culture.", "assets/bali.jpg");
+let paris = new Place("Paris", "Eiffel Tower, Louvre Museum", "2021-09-10", "Romantic city with rich history.", "assets/paris.jpg");
+let tokyo = new Place("Tokyo", "Shibuya Crossing, Tokyo Tower", "2023-03-20", "Fascinating blend of tradition and modernity.", "assets/tokyo.jpg");
 
 places.push(bali, paris, tokyo);
 
