@@ -40,5 +40,5 @@ Place.prototype.placeDetails = function() {
     places.push(bali);
 }
 
-It is clean, structured, and submission-ready.
+
 
